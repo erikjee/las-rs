@@ -87,7 +87,7 @@ pub(crate) trait PointReader: Debug {
 /// This struct is generally created by calling `points()` on `Reader`.
 #[derive(Debug)]
 pub struct PointIterator<'a> {
-    point_reader: &'a mut PointReader,
+    point_reader: &'a mut dyn PointReader,
 }
 
 impl<'a> Iterator for PointIterator<'a> {
